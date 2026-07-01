@@ -12,11 +12,13 @@ print("""RULES:
                 5) Total number of guesses will be shown at the end""")
 line = "_"*100
 print(line)
+
 number = random.randint(1,100)
 print("The number has been generated. Lets play the game!")
 winning = True
 guess = 0
 while(winning):
+
     try:
         num = int(input("Enter your number : "))
     except ValueError:
@@ -24,15 +26,16 @@ while(winning):
     if num<1 or num>100:
         print("Please enter a number between 1 and 100.")
         continue
+
     difference = abs(num-number)
     if(num == number):
         guess+=1
         print("Congrats you have guessed correctly!")
         print("The number of guesses used are",guess)
-        line = "_"*100
         print(line)
         winning = False
         break
+
     elif (num > number and difference >= 10):
         print("The guessed number is too big!")
         print(line)
@@ -47,6 +50,3 @@ while(winning):
         print("The guessed number is too small!")
         print(line)
         guess+=1
-   
-    
-    
